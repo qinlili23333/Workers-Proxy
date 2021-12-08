@@ -76,7 +76,9 @@ async function fetchAndApply(request) {
 
         let original_response = await fetch(url.href, {
             method: method,
-            headers: new_request_headers
+            headers: new_request_headers,
+            body: request.body,
+            redirect: "manual"
         })
 
         let original_response_clone = original_response.clone();
